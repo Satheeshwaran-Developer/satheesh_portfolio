@@ -25,9 +25,11 @@ useEffect(() => {
   if (isDark) {
     document.documentElement.classList.remove("dark");
     localStorage.setItem("theme", "light");
+     setDark(false);
   } else {
     document.documentElement.classList.add("dark");
     localStorage.setItem("theme", "dark");
+     setDark(true);
   }
 };
 
