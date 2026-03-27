@@ -4,29 +4,32 @@ import { useEffect, useState } from "react";
 export default function ThemeToggle() {
   const [dark, setDark] = useState(false);
 
-  useEffect(() => {
-    const saved = localStorage.getItem("theme");
+useEffect(() => {
+  const savedTheme = localStorage.getItem("theme");
 
-    if (saved === "dark") {
-      document.documentElement.classList.add("dark");
-      setDark(true);
-    } else {
-      document.documentElement.classList.remove("dark");
-      setDark(false);
-    }
-  }, []);
+  if (savedTheme) {
+    document.documentElement.classList.toggle(
+      "dark",
+      savedTheme === "dark"
+    );
+  } else {
+    // 👉 DEFAULT DARK MODE
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  }
+}, []);
 
   const toggleTheme = () => {
-    if (dark) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setDark(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setDark(true);
-    }
-  };
+  const isDark = document.documentElement.classList.contains("dark");
+
+  if (isDark) {
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  } else {
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  }
+};
 
   return (
     <button

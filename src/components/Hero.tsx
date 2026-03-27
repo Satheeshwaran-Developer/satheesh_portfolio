@@ -19,6 +19,7 @@ export default function Hero() {
   const [downloading, setDownloading] = useState(false);
   const [scanY, setScanY] = useState(0);
   const [launching, setLaunching] = useState(false);
+ console.log(downloading)
 
   useEffect(() => {
     let pos = 0;

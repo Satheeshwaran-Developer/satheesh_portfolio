@@ -11,6 +11,7 @@ import ContactSection from "../components/Contact";
 export default function Home() {
   return (
     <>
+    
       <Cursor />
       <Navbar />
       <Hero />

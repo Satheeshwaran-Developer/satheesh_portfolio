@@ -1,4 +1,4 @@
-import { Route } from "wouter";
+
 import { useEffect, useState } from "react";
 import Loader from "../src/Common/Loader";
 import Home from "./pages/Home";
@@ -27,7 +27,9 @@ export default function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-         <Route path="/" component={Home} />;
+          
+       
+        <Home />
         </motion.div>
       )}
     </AnimatePresence>
