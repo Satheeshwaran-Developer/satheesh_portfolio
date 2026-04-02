@@ -180,34 +180,32 @@ export default function ExperienceSection() {
   </motion.h3>
 
   {/* 🏢 COMPANY + TYPE */}
-  <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mt-1">
-    <span>{exp.company}</span>
+ <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-1">
+  <span>{exp.company}</span>
 
-    {/* 🔥 TYPE BADGE */}
-    <motion.span
-      className="
-        px-2 py-0.5 rounded-full text-xs
-        bg-gray-200 dark:bg-white/10
-        text-gray-700 dark:text-gray-300
-        border border-gray-300 dark:border-white/20
-      "
-      animate={{
-        scale: [1, 1.08, 1],
-        boxShadow: [
-          "0 0 0px rgba(34,197,94,0)",
-          "0 0 8px rgba(34,197,94,0.4)",
-          "0 0 0px rgba(34,197,94,0)",
-        ],
-      }}
-      transition={{
-        duration: 2,
-        repeat: Infinity,
-      }}
-      whileHover={{ scale: 1.15 }}
-    >
-      {exp.type}
-    </motion.span>
-  </div>
+  <motion.span
+    className="
+      w-fit
+      px-2 py-1 rounded-full text-xs
+      whitespace-nowrap
+      bg-gray-200 dark:bg-white/10
+      text-gray-700 dark:text-gray-300
+      border border-gray-300 dark:border-white/20
+    "
+    animate={{
+      scale: [1, 1.08, 1],
+      boxShadow: [
+        "0 0 0px rgba(34,197,94,0)",
+        "0 0 8px rgba(34,197,94,0.4)",
+        "0 0 0px rgba(34,197,94,0)",
+      ],
+    }}
+    transition={{ duration: 2, repeat: Infinity }}
+    whileHover={{ scale: 1.15 }}
+  >
+    {exp.type}
+  </motion.span>
+</div>
 </div>
 
                       {/* DATE BADGE */}

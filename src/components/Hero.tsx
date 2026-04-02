@@ -66,7 +66,7 @@ export default function Hero() {
   return (
    <section
   id="home"
-  className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6"
+  className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 pt-0 mt-0"
 >
   {/* 🌌 BACKGROUND */}
   <div className="absolute inset-0 -z-10 bg-gray-100 dark:bg-[#020617]" />
@@ -86,7 +86,7 @@ export default function Hero() {
           }}
           animate={{
             opacity: [0.1, 0.7, 0.1],
-            scale: [1, 1.2, 1],
+            scale: [1, 1.1, 1],
           }}
           transition={{
             duration: item.duration,
@@ -102,13 +102,13 @@ export default function Hero() {
 
   {/* 🌿 RIGHT SIDE LEAF */}
   <motion.div
-    className="
-      absolute 
-      right-0 sm:right-[3%] lg:right-[6%] 
-      top-1/2 -translate-y-1/2 
-      pointer-events-none 
-      scale-[0.6] sm:scale-[0.8] lg:scale-100
-    "
+   className="
+  hidden sm:block
+  absolute 
+  right-[6%] 
+  top-1/2 -translate-y-1/2 
+  pointer-events-none
+"
     initial={{ opacity: 0, x: 100 }}
     animate={{ opacity: 0.3, x: 0 }}
     transition={{ duration: 1 }}
@@ -161,12 +161,12 @@ export default function Hero() {
     {techNodes.map((node, i) => (
       <motion.div
         key={i}
-        className="absolute text-green-600 dark:text-green-400 text-sm sm:text-base lg:text-lg"
-        style={{
-          left: `${node.x}px`,
-          top: `${node.y}px`,
-          opacity: scanY > node.y ? 1 : 0,
-        }}
+className="hidden sm:block absolute text-green-600 dark:text-green-400 text-sm sm:text-base lg:text-lg"
+       style={{
+  left: `${node.x}px`,
+  top: `${node.y}px`,
+  opacity: scanY > node.y ? 1 : 0,
+}}
         animate={{ scale: [1, 1.3, 1] }}
         transition={{
           duration: 2,
@@ -186,12 +186,14 @@ export default function Hero() {
   />
 
   {/* 🌟 GLOW */}
-  <div className="absolute right-[0%] sm:right-[4%] lg:right-[6%] w-[300px] sm:w-[450px] lg:w-[600px] h-[300px] sm:h-[450px] lg:h-[600px] bg-green-600/10 dark:bg-green-400/10 blur-[120px] sm:blur-[150px] lg:blur-[180px] rounded-full" />
+  <div className="absolute right-[0%] sm:right-[4%] lg:right-[6%] hidden sm:block
+w-[450px] lg:w-[600px]
+h-[450px] lg:h-[600px] bg-green-600/10 dark:bg-green-400/10 blur-[120px] sm:blur-[150px] lg:blur-[180px] rounded-full" />
 
   {/* 🔥 CONTENT */}
-  <div className="relative z-10 max-w-3xl text-center">
+  <div className="relative z-10 max-w-3xl w-full text-center">
 
-    <motion.h1 className="text-3xl sm:text-5xl lg:text-[85px] leading-tight">
+    <motion.h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-[80px] leading-tight">
 
       <motion.span className="block text-gray-700 dark:text-gray-400 tracking-[2px]">
         Hi, I'm
@@ -227,7 +229,7 @@ export default function Hero() {
     </div>
 
     {/* 🔘 BUTTONS */}
-    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center">
+    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center items-center">
 
       <a className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-green-600 dark:bg-green-500 text-white" href="#projects">
         View Projects →
@@ -237,7 +239,7 @@ export default function Hero() {
         Contact  Me
       </a>
 
-    <div className="relative">
+   <div className="relative flex items-center justify-center">
 
   {/* 🚀 ROCKET */}
   {launching && (
