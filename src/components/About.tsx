@@ -58,7 +58,7 @@ export default function About() {
             <div className="bg-black/5 dark:bg-white/5 p-4 rounded-xl border border-gray-200 dark:border-white/10">
               <p className="font-semibold">B.Sc IT</p>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                American College · 2028 - 2021
+                American College · 2018 - 2021
               </p>
             </div>
           </div>
